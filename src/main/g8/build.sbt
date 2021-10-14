@@ -51,8 +51,7 @@ lazy val root =
       scalacOptions ++= compilerOptions,
       libraryDependencies ++= Seq(scalaTest % Test),
       addCompilerPlugin(
-        ("org.typelevel" %% "kind-projector" % kindProjectorVersion)
-          .cross(CrossVersion.full)
+        ("org.typelevel" %% "kind-projector" % kindProjectorVersion).cross(CrossVersion.full)
       ),
       Test / parallelExecution := false
     )
