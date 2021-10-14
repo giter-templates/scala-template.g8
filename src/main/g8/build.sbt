@@ -57,15 +57,7 @@ lazy val root =
       Test / parallelExecution := false
     )
     .settings(
-      dockerBaseImage := "openjdk:17-alpine",
-      dockerRepository := Some("index.docker.io"),
-      dockerUpdateLatest := true,
+      dockerBaseImage := "openjdk:11-jre-slim",
       Docker / packageName := "$name$",
-      Docker / version := "latest",
-      Docker / daemonUser := "daemon",
-      dockerCommands ++= Seq(
-        Cmd("USER", "root"),
-        Cmd("RUN", "apk", "add", "--no-cache", "bash"),
-        Cmd("USER", (Docker / daemonUser).value)
-      )
+      Docker / version := "latest"
     )
