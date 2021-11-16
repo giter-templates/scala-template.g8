@@ -40,6 +40,8 @@ lazy val compilerOptions: Seq[String] = Seq(
   "-Xlint:valpattern"
 )
 
+lazy val javaOptions = Seq("-source", "11", "-target", "11")
+
 lazy val root =
   project
     .in(file("."))
@@ -49,6 +51,7 @@ lazy val root =
       version := "0.1",
       scalaVersion := "2.13.6",
       scalacOptions ++= compilerOptions,
+      javacOptions ++= javaOptions,
       libraryDependencies ++= Seq(scalaTest % Test),
       addCompilerPlugin(
         ("org.typelevel" %% "kind-projector" % kindProjectorVersion).cross(CrossVersion.full)

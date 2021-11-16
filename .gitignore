@@ -4,3 +4,5 @@
 .bsp/
 target/
 build/
+.vscode/
+.metals/
